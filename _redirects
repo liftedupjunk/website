@@ -1,0 +1,12 @@
+# Netlify redirects file
+# This handles URL redirects and rewrites
+
+# Redirect section links to home with anchor
+/home      /#home      301
+/services  /#services  301
+/about     /#about     301
+/faq       /#faq       301
+/contact   /#contact   301
+
+# 404 fallback to home page
+/*         /index.html 200
