@@ -21,6 +21,10 @@
     --color-text-medium: #F7F7F7;    /* Clean White */
     --color-text-light: #E9DAC1;     /* Soft Sand - subtle text */
     
+    /* Text Colors for Light Backgrounds (cards, white sections) */
+    --color-text-on-light: #2B2B2B;  /* Deep Charcoal for text on white/light backgrounds */
+    --color-text-on-light-muted: #4A4A4A; /* Muted text on light backgrounds */
+    
     /* Grays */
     --color-gray-100: #3A3A3A;
     --color-gray-200: #4A4A4A;
@@ -317,7 +321,7 @@ section {
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     font-weight: 600;
-    color: var(--color-text-dark);
+    color: var(--color-text-on-light);
 }
 
 .badge-icon {
@@ -351,6 +355,17 @@ section {
     background-color: white;
 }
 
+.how-it-works .section-title,
+.how-it-works .section-subtitle,
+.why-choose .section-title,
+.why-choose .section-subtitle,
+.contact .section-title,
+.contact .section-subtitle,
+.about .section-title,
+.about .section-subtitle {
+    color: var(--color-text-on-light);
+}
+
 .steps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -361,7 +376,7 @@ section {
 .step-card {
     text-align: center;
     padding: 2.5rem 1.5rem;
-    background: linear-gradient(135deg, var(--color-gray-100), white);
+    background: white;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     transition: var(--transition-normal);
@@ -390,11 +405,11 @@ section {
 
 .step-card h3 {
     margin-bottom: 1rem;
-    color: var(--color-text-dark);
+    color: var(--color-text-on-light);
 }
 
 .step-card p {
-    color: var(--color-text-medium);
+    color: var(--color-text-on-light-muted);
 }
 
 /* ===========================
@@ -432,11 +447,11 @@ section {
 
 .service-card h3 {
     margin-bottom: 1rem;
-    color: var(--color-text-dark);
+    color: var(--color-text-on-light);
 }
 
 .service-card p {
-    color: var(--color-text-medium);
+    color: var(--color-text-on-light-muted);
     line-height: 1.7;
 }
 
@@ -452,6 +467,7 @@ section {
 .service-note p {
     font-size: 1.125rem;
     margin: 0;
+    color: var(--color-text-on-light);
 }
 
 /* ===========================
@@ -469,7 +485,7 @@ section {
 
 .benefit-card {
     padding: 2rem;
-    background: linear-gradient(135deg, var(--color-gray-100), white);
+    background: white;
     border-radius: var(--radius-md);
     text-align: center;
     transition: var(--transition-normal);
@@ -490,11 +506,13 @@ section {
 .benefit-card h3 {
     font-size: 1.125rem;
     margin-bottom: 0.5rem;
+    color: var(--color-text-on-light);
 }
 
 .benefit-card p {
     font-size: 0.95rem;
     margin: 0;
+    color: var(--color-text-on-light-muted);
 }
 
 /* ===========================
@@ -604,8 +622,14 @@ section {
 .about-intro {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--color-text-dark);
+    color: var(--color-text-on-light);
     margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    color: var(--color-text-on-light-muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
 }
 
 .about-tagline {
@@ -624,7 +648,7 @@ section {
    FAQ Section
    =========================== */
 .faq {
-    background: linear-gradient(to bottom, var(--color-cream), white);
+    background-color: var(--color-cream);
 }
 
 .faq-grid {
@@ -650,7 +674,7 @@ section {
     font-family: var(--font-heading);
     font-size: 1.125rem;
     font-weight: 600;
-    color: var(--color-text-dark);
+    color: var(--color-text-on-light);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -659,7 +683,7 @@ section {
 }
 
 .faq-question:hover {
-    background-color: var(--color-gray-100);
+    background-color: #f0f0f0;
     color: var(--color-primary);
 }
 
@@ -686,7 +710,7 @@ section {
 
 .faq-answer p {
     padding: 0 1.5rem 1.5rem;
-    color: var(--color-text-medium);
+    color: var(--color-text-on-light-muted);
     line-height: 1.8;
 }
 
@@ -804,7 +828,7 @@ section {
 }
 
 .info-card {
-    background-color: var(--color-gray-100);
+    background-color: white;
     padding: 2rem;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
@@ -817,7 +841,7 @@ section {
 
 .info-card h3 {
     margin-bottom: 1.5rem;
-    color: var(--color-text-dark);
+    color: var(--color-text-on-light);
 }
 
 .info-card.highlight h3 {
@@ -841,12 +865,13 @@ section {
 .info-item strong {
     display: block;
     margin-bottom: 0.25rem;
-    color: var(--color-text-dark);
+    color: var(--color-text-on-light);
 }
 
 .info-item p {
     font-size: 0.95rem;
     margin: 0;
+    color: var(--color-text-on-light-muted);
 }
 
 .benefits-list {
@@ -868,7 +893,7 @@ section {
    Footer
    =========================== */
 .footer {
-    background: linear-gradient(135deg, var(--color-text-dark), var(--color-gray-800));
+    background-color: var(--color-cream);
     color: white;
     padding: var(--spacing-lg) 0 var(--spacing-md);
 }
