@@ -705,13 +705,41 @@ section {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 500px;
+    max-height: 1000px;
 }
 
 .faq-answer p {
     padding: 0 1.5rem 1.5rem;
     color: var(--color-text-on-light-muted);
     line-height: 1.8;
+}
+
+.service-areas-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.5rem 2rem;
+    list-style: none;
+    padding: 0 1.5rem 1rem;
+    margin: 0;
+}
+
+.service-areas-list li {
+    color: var(--color-text-on-light-muted);
+    padding: 0.25rem 0;
+    position: relative;
+    padding-left: 1.25rem;
+}
+
+.service-areas-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    font-weight: bold;
+}
+
+.service-area-map {
+    padding: 0 1.5rem 1.5rem;
 }
 
 /* ===========================
