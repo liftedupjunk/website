@@ -383,9 +383,84 @@
             <p class="section-subtitle">Fill out the form below and we'll get back to you quickly with transparent pricing</p>
             <div class="contact-wrapper">
                 <div class="contact-form">
-                    <iframe
-                        src='https://st.sendajob.com/MY/servicerequest/d72e17bcde01530b6d845996fe034505136a3aec_f.html' 
-                        width='100%' height='748' scrolling='no' style='border:none;'></iframe>
+                    <form id="contactForm" class="quote-form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                minlength="2"
+                                placeholder="John Smith"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                required
+                                pattern="[0-9\s\-\(\)\+]+"
+                                placeholder="(828) 279-1948"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email (Optional)</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="john@example.com"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceType">Service Type *</label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="">Select a service...</option>
+                                <option value="Junk Removal">Junk Removal</option>
+                                <option value="Furniture Removal">Furniture Removal</option>
+                                <option value="Appliance Removal">Appliance Removal</option>
+                                <option value="Estate Cleanout">Estate Cleanout</option>
+                                <option value="Garage Cleanout">Garage Cleanout</option>
+                                <option value="Construction Debris">Construction Debris</option>
+                                <option value="Yard Waste Removal">Yard Waste Removal</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Service Address *</label>
+                            <input
+                                type="text"
+                                id="address"
+                                name="address"
+                                required
+                                minlength="5"
+                                placeholder="123 Main St, Atlanta, GA 30301"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="details">Additional Details</label>
+                            <textarea
+                                id="details"
+                                name="details"
+                                rows="4"
+                                placeholder="Tell us more about what you need removed (optional)"
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            Get Free Quote
+                        </button>
+
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
                 </div>
                 <div class="contact-info">
                     <div class="info-card">

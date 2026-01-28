@@ -87,20 +87,29 @@ if (contactForm) {
         const data = Object.fromEntries(formData.entries());
         
         try {
-            // For Netlify Forms, the form should have a name attribute
-            // and data-netlify="true" in the HTML
-            // This is a client-side validation and display
-            
-            // Simulate form submission (replace with actual endpoint if needed)
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            
+            // Submit to Netlify Function
+            const response = await fetch('/.netlify/functions/submit-quote', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                // Server returned an error
+                throw new Error(result.error || 'Failed to submit quote request');
+            }
+
             // Show success message
-            showFormMessage('success', 'Thank you! We\'ll get back to you soon with a quote.');
+            showFormMessage('success', result.message || 'Thank you! We\'ll contact you within 2 hours.');
             contactForm.reset();
-            
+
         } catch (error) {
             // Show error message
-            showFormMessage('error', 'Oops! Something went wrong. Please try calling us directly.');
+            showFormMessage('error', error.message || 'Oops! Something went wrong. Please try calling us at (828) 279-1948.');
             console.error('Form submission error:', error);
         } finally {
             // Re-enable button
@@ -112,37 +121,23 @@ if (contactForm) {
 
 // Form message display helper
 function showFormMessage(type, message) {
-    // Remove existing messages
-    const existingMessage = document.querySelector('.form-message');
-    if (existingMessage) {
-        existingMessage.remove();
+    // Get or create message element
+    let messageDiv = document.getElementById('formMessage');
+
+    if (!messageDiv) {
+        messageDiv = document.createElement('div');
+        messageDiv.id = 'formMessage';
+        contactForm.appendChild(messageDiv);
     }
-    
-    // Create message element
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `form-message form-message-${type}`;
+
+    // Update message
+    messageDiv.className = `form-message ${type}`;
     messageDiv.textContent = message;
-    
-    // Style the message
-    messageDiv.style.cssText = `
-        padding: 1rem 1.5rem;
-        margin-top: 1rem;
-        border-radius: 8px;
-        font-weight: 600;
-        text-align: center;
-        animation: fadeInUp 0.4s ease;
-        ${type === 'success' 
-            ? 'background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb;' 
-            : 'background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb;'}
-    `;
-    
-    // Insert message after form
-    contactForm.appendChild(messageDiv);
-    
+    messageDiv.style.display = 'block';
+
     // Auto-remove after 5 seconds
     setTimeout(() => {
-        messageDiv.style.opacity = '0';
-        setTimeout(() => messageDiv.remove(), 300);
+        messageDiv.style.display = 'none';
     }, 5000);
 }
 

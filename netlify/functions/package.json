@@ -1,0 +1,10 @@
+{
+  "name": "liftedupjunk-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for Lifted Up Junk quote request system",
+  "main": "submit-quote.js",
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.0",
+    "twilio": "^5.0.0"
+  }
+}
