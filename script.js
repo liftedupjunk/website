@@ -104,7 +104,7 @@ if (contactForm) {
             }
 
             // Show success message
-            showFormMessage('success', result.message || 'Thank you! We\'ll contact you within 2 hours.');
+            showFormMessage('success', 'Thank you for submitting your request. We will reach out to you shortly.');
             contactForm.reset();
 
         } catch (error) {
@@ -135,10 +135,13 @@ function showFormMessage(type, message) {
     messageDiv.textContent = message;
     messageDiv.style.display = 'block';
 
-    // Auto-remove after 5 seconds
+    // Scroll to message
+    messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    // Auto-remove after 8 seconds
     setTimeout(() => {
         messageDiv.style.display = 'none';
-    }, 5000);
+    }, 8000);
 }
 
 // Header scroll effect
