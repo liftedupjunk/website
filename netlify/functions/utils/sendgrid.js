@@ -106,7 +106,7 @@ Thank you for requesting a quote from Lifted Up Junk!
 
 We've received your request for ${serviceType} and will contact you within 2 hours to discuss your needs and provide a free estimate.
 
-In the meantime, if you have any questions, feel free to call us at (828) 279-1948.
+In the meantime, if you have any questions, feel free to call us at ${process.env.BUSINESS_PHONE}.
 
 Best regards,
 Lifted Up Junk Team
@@ -139,7 +139,7 @@ Lifted Up Junk Team
       <p>In the meantime, if you have any questions, feel free to call us:</p>
 
       <p style="text-align: center;">
-        <a href="tel:+18282791948" class="button">📞 Call (828) 279-1948</a>
+        <a href="tel:${process.env.BUSINESS_PHONE}" class="button">📞 Call ${process.env.BUSINESS_PHONE.replace(/(\d{1})(\d{3})(\d{3})(\d{4})/, '($2) $3-$4')}</a>
       </p>
 
       <p>We look forward to serving you!</p>
@@ -149,7 +149,7 @@ Lifted Up Junk Team
     </div>
     <div class="footer">
       <p>Lifted Up Junk - Professional Junk Removal Services<br>
-      Atlanta, GA | (828) 279-1948</p>
+      Atlanta, GA | ${process.env.BUSINESS_PHONE.replace(/(\d{1})(\d{3})(\d{3})(\d{4})/, '($2) $3-$4')}</p>
     </div>
   </div>
 </body>
