@@ -1,44 +1,40 @@
 /* ===========================
-   CSS Variables - Lifted Up Junk Color Palette
+   CSS Variables - Warm Color Palette
    =========================== */
 :root {
-    /* Primary Colors - Copper Gold */
-    --color-primary: #B87333;        /* Copper Gold - warmth, value, transformation */
-    --color-primary-dark: #8B5A2B;   /* Darker copper */
-    --color-primary-light: #D4956A;  /* Light copper */
+    /* Warm Primary Colors */
+    --color-primary: #E67E22;        /* Warm orange */
+    --color-primary-dark: #D35400;   /* Darker orange */
+    --color-primary-light: #F39C12;  /* Light orange */
     
-    /* Accent Colors */
-    --color-secondary: #2CA6A4;      /* Uplift Teal - CTAs, standout elements */
-    --color-tertiary: #E9DAC1;       /* Soft Sand - minimal use, copyright */
+    /* Warm Accent Colors */
+    --color-secondary: #C0392B;      /* Warm red */
+    --color-tertiary: #F4A460;       /* Sandy brown */
     
-    /* Background Colors */
-    --color-cream: #2B2B2B;          /* Deep Charcoal - prominent backgrounds */
-    --color-beige: #3A3A3A;          /* Lighter charcoal */
-    --color-tan: #E9DAC1;            /* Soft Sand */
+    /* Neutral Warm Colors */
+    --color-cream: #FFF8F0;          /* Warm white/cream */
+    --color-beige: #F5E6D3;          /* Light beige */
+    --color-tan: #D4A574;            /* Tan */
     
     /* Text Colors */
-    --color-text-dark: #F7F7F7;      /* Clean White - paragraphs, descriptive text */
-    --color-text-medium: #F7F7F7;    /* Clean White */
-    --color-text-light: #E9DAC1;     /* Soft Sand - subtle text */
+    --color-text-dark: #2C1810;      /* Dark brown */
+    --color-text-medium: #5D4E37;    /* Medium brown */
+    --color-text-light: #8B7355;     /* Light brown */
     
-    /* Text Colors for Light Backgrounds (cards, white sections) */
-    --color-text-on-light: #2B2B2B;  /* Deep Charcoal for text on white/light backgrounds */
-    --color-text-on-light-muted: #4A4A4A; /* Muted text on light backgrounds */
-    
-    /* Grays */
-    --color-gray-100: #3A3A3A;
-    --color-gray-200: #4A4A4A;
-    --color-gray-300: #5A5A5A;
-    --color-gray-800: #F7F7F7;
+    /* Grays with warmth */
+    --color-gray-100: #FAF9F7;
+    --color-gray-200: #F0EBE3;
+    --color-gray-300: #E0D5C7;
+    --color-gray-800: #4A3F35;
     
     /* Success & Info */
-    --color-success: #2CA6A4;        /* Uplift Teal */
-    --color-info: #2CA6A4;           /* Uplift Teal */
+    --color-success: #27AE60;
+    --color-info: #3498DB;
     
     /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.25);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 2px 8px rgba(230, 126, 34, 0.1);
+    --shadow-md: 0 4px 16px rgba(230, 126, 34, 0.15);
+    --shadow-lg: 0 8px 32px rgba(230, 126, 34, 0.2);
     
     /* Typography */
     --font-heading: 'Poppins', sans-serif;
@@ -210,11 +206,17 @@ section {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 .logo-icon {
     font-size: 2rem;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    display: block;
 }
 
 .nav-menu {
@@ -226,7 +228,7 @@ section {
 .nav-link {
     font-family: var(--font-heading);
     font-weight: 500;
-    color: var(--color-secondary);
+    color: var(--color-text-dark);
     transition: var(--transition-fast);
 }
 
@@ -321,7 +323,7 @@ section {
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     font-weight: 600;
-    color: var(--color-text-on-light);
+    color: var(--color-text-dark);
 }
 
 .badge-icon {
@@ -355,17 +357,6 @@ section {
     background-color: white;
 }
 
-.how-it-works .section-title,
-.how-it-works .section-subtitle,
-.why-choose .section-title,
-.why-choose .section-subtitle,
-.contact .section-title,
-.contact .section-subtitle,
-.about .section-title,
-.about .section-subtitle {
-    color: var(--color-text-on-light);
-}
-
 .steps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -376,7 +367,7 @@ section {
 .step-card {
     text-align: center;
     padding: 2.5rem 1.5rem;
-    background: white;
+    background: linear-gradient(135deg, var(--color-gray-100), white);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     transition: var(--transition-normal);
@@ -405,11 +396,11 @@ section {
 
 .step-card h3 {
     margin-bottom: 1rem;
-    color: var(--color-text-on-light);
+    color: var(--color-text-dark);
 }
 
 .step-card p {
-    color: var(--color-text-on-light-muted);
+    color: var(--color-text-medium);
 }
 
 /* ===========================
@@ -447,11 +438,11 @@ section {
 
 .service-card h3 {
     margin-bottom: 1rem;
-    color: var(--color-text-on-light);
+    color: var(--color-text-dark);
 }
 
 .service-card p {
-    color: var(--color-text-on-light-muted);
+    color: var(--color-text-medium);
     line-height: 1.7;
 }
 
@@ -467,7 +458,6 @@ section {
 .service-note p {
     font-size: 1.125rem;
     margin: 0;
-    color: var(--color-text-on-light);
 }
 
 /* ===========================
@@ -485,7 +475,7 @@ section {
 
 .benefit-card {
     padding: 2rem;
-    background: white;
+    background: linear-gradient(135deg, var(--color-gray-100), white);
     border-radius: var(--radius-md);
     text-align: center;
     transition: var(--transition-normal);
@@ -506,13 +496,11 @@ section {
 .benefit-card h3 {
     font-size: 1.125rem;
     margin-bottom: 0.5rem;
-    color: var(--color-text-on-light);
 }
 
 .benefit-card p {
     font-size: 0.95rem;
     margin: 0;
-    color: var(--color-text-on-light-muted);
 }
 
 /* ===========================
@@ -622,14 +610,8 @@ section {
 .about-intro {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--color-text-on-light);
+    color: var(--color-text-dark);
     margin-bottom: 1.5rem;
-}
-
-.about-text p {
-    color: var(--color-text-on-light-muted);
-    line-height: 1.8;
-    margin-bottom: 1rem;
 }
 
 .about-tagline {
@@ -648,7 +630,7 @@ section {
    FAQ Section
    =========================== */
 .faq {
-    background-color: var(--color-cream);
+    background: linear-gradient(to bottom, var(--color-cream), white);
 }
 
 .faq-grid {
@@ -674,7 +656,7 @@ section {
     font-family: var(--font-heading);
     font-size: 1.125rem;
     font-weight: 600;
-    color: var(--color-text-on-light);
+    color: var(--color-text-dark);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -683,7 +665,7 @@ section {
 }
 
 .faq-question:hover {
-    background-color: #f0f0f0;
+    background-color: var(--color-gray-100);
     color: var(--color-primary);
 }
 
@@ -710,7 +692,7 @@ section {
 
 .faq-answer p {
     padding: 0 1.5rem 1.5rem;
-    color: var(--color-text-on-light-muted);
+    color: var(--color-text-medium);
     line-height: 1.8;
 }
 
@@ -724,7 +706,7 @@ section {
 }
 
 .service-areas-list li {
-    color: var(--color-text-on-light-muted);
+    color: var(--color-text-medium);
     padding: 0.25rem 0;
     position: relative;
     padding-left: 1.25rem;
@@ -849,6 +831,55 @@ section {
     margin-top: 1rem;
 }
 
+.submit-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.submit-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    text-align: center;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -856,7 +887,7 @@ section {
 }
 
 .info-card {
-    background-color: white;
+    background-color: var(--color-gray-100);
     padding: 2rem;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
@@ -869,7 +900,7 @@ section {
 
 .info-card h3 {
     margin-bottom: 1.5rem;
-    color: var(--color-text-on-light);
+    color: var(--color-text-dark);
 }
 
 .info-card.highlight h3 {
@@ -893,13 +924,12 @@ section {
 .info-item strong {
     display: block;
     margin-bottom: 0.25rem;
-    color: var(--color-text-on-light);
+    color: var(--color-text-dark);
 }
 
 .info-item p {
     font-size: 0.95rem;
     margin: 0;
-    color: var(--color-text-on-light-muted);
 }
 
 .benefits-list {
@@ -921,7 +951,7 @@ section {
    Footer
    =========================== */
 .footer {
-    background-color: var(--color-cream);
+    background: linear-gradient(135deg, var(--color-text-dark), var(--color-gray-800));
     color: white;
     padding: var(--spacing-lg) 0 var(--spacing-md);
 }

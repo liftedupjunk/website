@@ -5,6 +5,7 @@
   "main": "submit-quote.js",
   "dependencies": {
     "@sendgrid/mail": "^8.1.0",
-    "twilio": "^5.0.0"
+    "dotenv": "^17.2.3",
+    "twilio": "^5.12.0"
   }
 }

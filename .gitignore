@@ -28,3 +28,12 @@ Thumbs.db
 
 # Claude
 .claude/
+
+# Setup files with secrets
+SETUP*.md
+
+# Test scripts
+test-*.js
+check-*.js
+diagnose-*.js
+list-*.js
